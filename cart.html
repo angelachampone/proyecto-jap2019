@@ -29,6 +29,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/dropzone.css" rel="stylesheet">
+    <link href="css/estilo cart.css" rel="stylesheet">
+
   </head>
   <body>
       <nav class="navbar navbar-dark navbar-expand-lg site-header   sticky-top py-1 bg-dark">
@@ -62,18 +64,22 @@
             <div class="text-center p-4">
               <h2>Mi carrito</h2>
               <p class="lead">Productos selaccionados para comprar.</p>
+            </div>
         </div>
-
         
-        <div>
-        <div>
-          <div role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <div>
-                 <h5 class="mb-3">Información de los productos</h5>              
+        <div class="container">
+          <div class="row justify-content-md-center">
+              <div class="col-md-8 order-md-1">
+                <div class="modal-header">
+                 <h4 class="modal-title">Información de los productos</h4>   
+                  </div>  
+
+              <div class="row">
                 
-                 <table style="width: 150%">
+                <div class="modal-content" class="modal-body">
+                                  
+                 <table class="table" >
+                  <thead>
                   <tr align="center">
                     <th>Imagen</th>
                     <th>Nombre</th>
@@ -82,47 +88,112 @@
                     <th>Cantidad</th>
                     <th>Subtotal</th>
                   </tr>
-
-                  <tr align="center">
-                    <td><img src="img\tree1.jpg" width:="10"></td>
-                    <td>Pino de olor</td>
-                    <td>100</td>
-                    <td>UYU</td>
-                    <td>2</td>
-                    <td>200</td>
-                  </tr>
-                                 
+                </thead>
+                <tbody id="producto">
+                  
+                </tbody>
                 </table>
-     
                 
                 <style >
-                                
-                tr, th, td {                  
-                  border: 1px solid black;
+
+                tr, th, td {                         
+                  border: 1px,#CDCDCD;
                   padding: 10px;
-                  border-collapse: collapse;
-                   
+                  border-collapse: collapse;                   
                 }
+
                    @media (min-width: 768px) {
                     table {
-                      font-size: 1.1rem;
+                      font-size: 1rem;
                     }
                 }
                 </style>
-              
                 </div>
-             </div>
+              </div>
             </div>
           </div>
-        </div>
-        </div>
+          </div>
+        
+          
+            
 
+      <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8 order-md-1">   
+                  <div class="modal-header">        
+               <h4 class="modal-title">Información del envío</h4>              
+              </div>
+              <div class="modal-body">
+                  <h5 class="modal-title">Dirección</h5>
+                
+                <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="productCalle">Calle</label>
+                <input type="text" class="form-control" id="productCalle"  placeholder="" value="" required>
+                  <div class="invalid-feedback">
+                    Ingresa una calle
+                  </div>
+                </div>
+                  <div class="col-md-4 mb-3">              
+                    <label for="number">Número</label>                
+                    <input type="number" class="form-control" id="number" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Ingresa el número
+                      </div>
+                  </div> 
+                 <div class="col-md-6 mb-3">
+                  <label for="productEsquina">Esquina</label>
+                    <input type="text" class="form-control" id="productEsquina"  placeholder="" value="" required>
+                      <div class="invalid-feedback">
+                        Ingresa una esquina
+                      </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="state">Pais</label>
+                  <select class="custom-select d-block w-100" >
+                    <option value="">Elija el pais...</option>
+                    <option>Uruguay</option>
+                    <option>Argentina</option>
+                    <option>Brasil</option>
+                    <option>Chile</option>
+                   </select>
+                  <div class="invalid-feedback">
+                    Por favor ingresa un pais
+                  </div>
+                </div>
+              </div>
+              <div>
+              <h5 class="modal-title">Tipo de envío</h5>
+            </div>
+            <div class="d-block my-3">
+                 <div class="custom-control custom-radio">
+                  <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
+                  <label class="custom-control-label" for="premiumradio">Premium - 2 a 5 dias (15%)</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="espressradio" name="publicationType" type="radio" class="custom-control-input" required="">
+                  <label class="custom-control-label" for="espressradio">Espress - 5 a 8 dias (7%)</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
+                  <label class="custom-control-label" for="standardradio">Estándar - 12 a 15 dias (5%)</label>
+                </div>
+                <div class="row">
+                  <button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal"></button>
+                 </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
 
+      <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8 order-md-1">
         <div role="document">
-          <div class="modal-content">
+          
             <div class="modal-header">
-              <h5 class="modal-title">Forma de pago</h5>
-           </button>
+              <h4 class="modal-title">Forma de pago</h4>
             </div>
             <div class="modal-body">
               <div class="container">
@@ -157,6 +228,7 @@
                           Ingresa la fecha de vencimiento
                         </div>
                       </div>
+                  
                   </div>
                   <div class="row">
                     <div class="custom-control custom-radio">
@@ -175,13 +247,17 @@
                     </div>
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+            <div >
+                <hr class="mb-4">
+                <button type="button" class="btn btn-primary btn-lg"  data-dismiss="modal">Comprar</button>
+            <//button type="button" class="btn btn-primary" data-dismiss="modal"><///button>
             </div>
           </div>
         </div>
       </div>
-
+    </div>
+      </div>
+      
 
       <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
       <script src="js/vendor/jquery-3.4.1.min.js"></script>

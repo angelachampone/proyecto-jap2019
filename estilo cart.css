@@ -1,0 +1,14 @@
+@media (max-width:768px){
+    table{
+        width: 75%;
+    }
+}
+@media (max-width:480px){
+    table{
+        width: 95%;
+    }
+}
+.table-container{
+    overflow-x: auto;
+  }
+
