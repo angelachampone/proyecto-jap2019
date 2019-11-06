@@ -10,7 +10,7 @@ let ERROR_MSG = "Ha habido un error :(, verifica qué pasó.";
 
 //Función que se utiliza para actualizar los costos de publicación
 function updateTotalCosts(){
-    /*let unitProductCostHTML = document.getElementById("productCostText");
+    let unitProductCostHTML = document.getElementById("productCostText");
     let comissionCostHTML = document.getElementById("comissionText");
     let totalCostHTML = document.getElementById("totalCostText");
 
@@ -20,7 +20,7 @@ function updateTotalCosts(){
 
     unitProductCostHTML.innerHTML = unitCostToShow;
     comissionCostHTML.innerHTML = comissionToShow;
-    totalCostHTML.innerHTML = totalCostToShow;*/
+    totalCostHTML.innerHTML = totalCostToShow;
 }
 
 function updateSubtotal(){
@@ -28,7 +28,7 @@ function updateSubtotal(){
     let cant = parseInt(document.getElementById("cantidad").value);
     let subTotal = cant * preUni;
     document.getElementById("subTotal").innerHTML = subTotal;
-
+    document.getElementById("productCostText").innerHTML = subTotal;
     }
 
 function showArticles(array){
